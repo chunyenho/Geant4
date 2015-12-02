@@ -1,0 +1,5 @@
+----------------------------------------------------
+In eventgendefs.hh,
+eventgendefs.hh doesn't has a class.
+--------------------------eventgendefs.hh--------------------------
+eventgendefs.hh doesn't has a class.
