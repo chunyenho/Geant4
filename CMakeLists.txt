@@ -5,6 +5,10 @@
 #
 # $Id: CMakeLists.txt 90844 2015-06-10 10:03:56Z gcosmo $
 #
+#-----------------------------------
+#
+#
+find_package(CUDA)
 
 #------------------------------------------------------------------------------
 # - Enforce an out-of-source builds before anything else

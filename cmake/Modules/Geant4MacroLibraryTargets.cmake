@@ -70,7 +70,7 @@ MACRO(GEANT4_LIBRARY_TARGET)
       if(BUILD_STATIC_LIBS)
         set(_archive ${G4LIBTARGET_NAME}-static)
       else()
-        add_library(_${G4LIBTARGET_NAME}-archive STATIC EXCLUDE_FROM_ALL ${G4LIBTARGET_SOURCES})
+        cuda_add_library(_${G4LIBTARGET_NAME}-archive STATIC EXCLUDE_FROM_ALL ${G4LIBTARGET_SOURCES})
         set(_archive _${G4LIBTARGET_NAME}-archive)
       endif()
 
@@ -92,7 +92,7 @@ MACRO(GEANT4_LIBRARY_TARGET)
       file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/_${G4LIBTARGET_NAME}.cpp
         "// empty _${G4LIBTARGET_NAME}.cpp\n")
 
-      add_library(${G4LIBTARGET_NAME} SHARED _${G4LIBTARGET_NAME}.cpp
+      cuda_add_library(${G4LIBTARGET_NAME} SHARED _${G4LIBTARGET_NAME}.cpp
         _${G4LIBTARGET_NAME}.def)
 
       # - Link the DLL.
@@ -108,7 +108,7 @@ MACRO(GEANT4_LIBRARY_TARGET)
 
     else()
       # - We build a Shared library in the usual fashion...
-      add_library(${G4LIBTARGET_NAME} SHARED ${G4LIBTARGET_SOURCES})
+      cuda_add_library(${G4LIBTARGET_NAME} SHARED ${G4LIBTARGET_SOURCES})
       geant4_compile_definitions_config(${G4LIBTARGET_NAME})
       target_link_libraries(${G4LIBTARGET_NAME}
         ${G4LIBTARGET_GEANT4_LINK_LIBRARIES}
@@ -151,7 +151,7 @@ MACRO(GEANT4_LIBRARY_TARGET)
     # name. Link its dependencies, and ensure we actually link to the
     # -static targets (We should strictly do this for the external
     # libraries as well if we want a pure static build).
-    add_library(${G4LIBTARGET_NAME}-static STATIC ${G4LIBTARGET_SOURCES})
+    cuda_add_library(${G4LIBTARGET_NAME}-static STATIC ${G4LIBTARGET_SOURCES})
     geant4_compile_definitions_config(${G4LIBTARGET_NAME}-static)
 
     set(G4LIBTARGET_GEANT4_LINK_LIBRARIES_STATIC )
