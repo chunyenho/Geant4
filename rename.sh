@@ -1,5 +1,7 @@
 # #!/bin/bash
 
+# Usage : Rename all cc files to cu files without change content.
+
 mv /home/raybeam/workspace/Geant4/examples/extended/hadronic/Hadr01/src/Histo.cc /home/raybeam/workspace/Geant4/examples/extended/hadronic/Hadr01/src/Histo.cu
 mv /home/raybeam/workspace/Geant4/examples/extended/hadronic/Hadr01/src/CheckVolumeSD.cc /home/raybeam/workspace/Geant4/examples/extended/hadronic/Hadr01/src/CheckVolumeSD.cu
 mv /home/raybeam/workspace/Geant4/examples/extended/hadronic/Hadr01/src/StackingAction.cc /home/raybeam/workspace/Geant4/examples/extended/hadronic/Hadr01/src/StackingAction.cu
