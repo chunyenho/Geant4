@@ -1,4 +1,9 @@
 #!/bin/bash
+
+#
+# Usage : Add __device__ __host__ tag in front of class functions.  
+# ex: $ ./add_CUDAtag.sh G4RunManager.hh
+
 echo class start
 class_start=`sed -n '/^class[ ].*[^;]$/=' $1`
 echo $class_start
